@@ -1,17 +1,11 @@
 # -*- coding: utf-8 -*-
+from dateutil.parser import parse as parse_datetime
+from urllib.error import HTTPError
+from urllib.parse import urljoin
+from urllib.request import urlopen, Request
 import base64
 import json
 import logging
-try:
-    from urllib.parse import urlencode, urljoin
-    from urllib.request import urlopen, Request
-    from urllib.error import HTTPError
-except ImportError:
-    from urllib.parse import urlencode
-    from urllib.request import urlopen, Request
-    from urllib.error import HTTPError
-    from urllib.parse import urljoin
-from dateutil.parser import parse as parse_datetime
 
 from .exceptions import XplentyAPIException
 
